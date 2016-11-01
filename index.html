@@ -47,9 +47,10 @@
           </form>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="current-balance">
         <div class="col-md-6">
           <h2>Current Balance:</h2>
+          <h3 id="account-id"></h3>
           <div class="well well-lg" id="balance">
           </div>
         </div>
@@ -58,7 +59,7 @@
           <h3>Interest Compounded Monthly</h3>
             <form id="projection-form">
               <div class="form-group" id="months">
-                <label for="months">Moths of Interest:</label>
+                <label for="months">Months of Interest:</label>
                 <input id="months" class="form-control" type="number" placeholder="Months of interest">
               </div>
               <button type="submit">Submit</button>
