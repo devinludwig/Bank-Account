@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron bg-primary">
         <h1>Epicodus Bank & Trust</h1>
       </div>
       <div class="row">
@@ -18,12 +18,17 @@
           <form id="new-account">
             <div class="form-group" id="name">
               <label for="name">Name:</label>
-              <input id="name" class="form-control" type="text">
+              <input id="name" class="form-control" type="text" placeholder="Name Here">
             </div>
             <div class="form-group" id="initial-deposit">
               <label for="initial-deposit">Initial Deposit:</label>
-              <input id="initial-deposit" class="form-control" type="text">
+              <input id="initial-deposit" class="form-control" type="text" placeholder="Initial Deposit Amount">
             </div>
+            <label for="account-type">Account Type:</label>
+            <select class="form-control form-group" id="account-type">
+               <option value="checking">Checking</option>
+               <option value="savings">Savings</option>
+            </select>
             <button type="submit">Submit</button>
           </form>
         </div>
@@ -32,19 +37,34 @@
           <form id="deposit-withdrawal">
             <div class="form-group" id="deposit">
               <label for="deposit">Deposit Amount:</label>
-              <input id="deposit" class="form-control" type="text">
+              <input id="deposit" class="form-control" type="text" placeholder="Deposit Amount">
             </div>
             <div class="form-group" id="withdrawal">
               <label for="withdrawal">Withdrawal Amount:</label>
-              <input id="withdrawal" class="form-control" type="text">
+              <input id="withdrawal" class="form-control" type="text" placeholder="Withdrawal Amount">
             </div>
             <button type="submit">Submit</button>
           </form>
         </div>
       </div>
       <div class="row">
-        <h2>Current Balance:</h2>
-        <div class="well well-lg" id="balance">
+        <div class="col-md-6">
+          <h2>Current Balance:</h2>
+          <div class="well well-lg" id="balance">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2>Projected Balance</h2>
+          <h3>Interest Compounded Monthly</h3>
+            <form id="projection-form">
+              <div class="form-group" id="months">
+                <label for="months">Moths of Interest:</label>
+                <input id="months" class="form-control" type="number" placeholder="Months of interest">
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          <div class="well well-lg" id="projected">
+          </div>
         </div>
       </div>
     </div>
