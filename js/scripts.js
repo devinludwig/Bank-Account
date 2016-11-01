@@ -11,6 +11,7 @@ function BankAccount(userName, accountType, balance) {
   } else if(accountType === "savings"){
     this.interestRate = savingsInterest;
   };
+  this.accountHistory = ["+" + balance];
 };
 
 BankAccount.prototype.deposit = function(amount) {
@@ -41,15 +42,26 @@ $(document).ready(function(){
   });
   $("form#deposit-withdrawal").submit(function(event){
     event.preventDefault();
+    $('ul').empty();
     var deposit = $("input#deposit").val();
     var withdrawal = $("input#withdrawal").val();
     if (deposit != "") {
       newAccount.deposit(deposit);
+      newAccount.accountHistory.push("+" + deposit);
+      console.log(newAccount.accountHistory);
     }
     if (withdrawal != "") {
       newAccount.withdraw(withdrawal);
+      newAccount.accountHistory.push("-" + withdrawal);
+      console.log(newAccount.accountHistory);
     }
     $('#balance').text(newAccount.balance.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+
+
+    for (i = 0; i < newAccount.accountHistory.length; i++ ) {
+         $('ul').prepend('<li>'  + newAccount.accountHistory[i] + '</li>');
+     }
+
     $("input#deposit").val("");
     $("input#withdrawal").val("");
   });
