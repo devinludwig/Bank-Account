@@ -57,9 +57,8 @@ $(document).ready(function(){
     }
     $('#balance').text(newAccount.balance.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
 
-
     for (i = 0; i < newAccount.accountHistory.length; i++ ) {
-         $('ul').prepend('<li>'  + newAccount.accountHistory[i] + '</li>');
+         $('ul').prepend('<li>'  + newAccount.accountHistory[i] + '<span>' + newAccount.balance + '</span></li>');
      }
 
     $("input#deposit").val("");

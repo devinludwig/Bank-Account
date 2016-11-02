@@ -41,3 +41,7 @@ h2 {
 #current-balance {
   display: none;
 }
+
+span {
+  float: right;
+}
